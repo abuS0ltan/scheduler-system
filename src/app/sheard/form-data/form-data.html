@@ -1,18 +1,16 @@
 <div class="top-div">
-      <h1 class="title">أضف عميل جديد</h1>
+      <h1 class="title">أضف {{title}} جديد</h1>
 
-        <form action="" class="form-div">
+        <form class="form-div" #formRef="ngForm"  (ngSubmit)="onSubmit()">
             <div class="inputs-div">
+              @for (item of inputLabel; track $index) {
 
                 <div class="input-div">
-                  <label for="">الاسم الكامل</label>
-                  <input type="text" placeholder="أدخل اسم العميل" />
+                  <label for="">{{item}} </label>
+                  <input required #fieldRef="ngModel" type="text" placeholder=" أدخل ال  {{item}} الخاص ب {{title}}" name="{{item}}" [(ngModel)]="modelInstance[item]"/>
                 </div>
-                <div class="input-div">
-                  <label for="">رقم الهاتف</label>
-                  <input type="text" placeholder="أدخل رقم هاتف العميل" />
-                </div>
+              }
             </div>
-          <button type="submit" class="btn"><span class="icon"><img src="multiple.svg" alt=""></span><span>اضافة</span></button>
+          <button type="submit" class="btn" [disabled]="formRef.invalid"><span class="icon"><img src="multiple.svg" alt=""></span><span>اضافة</span></button>
         </form>
     </div>

@@ -1,7 +1,7 @@
+import { Client } from './../../models/client.model';
 import { Component } from '@angular/core';
 import { DataTable } from '../../sheard/data-table/data-table.js';
 import { FormData } from "../../sheard/form-data/form-data";
-import { Client } from '../../models/client.model.js';
 @Component({
   selector: 'app-client-page',
   imports: [DataTable, FormData],
@@ -10,6 +10,7 @@ import { Client } from '../../models/client.model.js';
 })
 export class ClientPage {
   clientInstance=new Client()
+  clientWithoutId: any;
    data:Client[]=[
     {
       id:1,
@@ -22,4 +23,17 @@ export class ClientPage {
       phone:"05999999999"
     }
    ]
+
+  constructor() {
+    const newClient = new Client();
+    const {id,...clientWithoutId} = newClient;
+    this.clientWithoutId = clientWithoutId;
+  }
+
+    handelDelete(id: number) {
+    console.log("Delete ID:", id);
+  }
+  handelAdd(client: any) {
+    console.log("Added Client:", client);
+  }
 }
