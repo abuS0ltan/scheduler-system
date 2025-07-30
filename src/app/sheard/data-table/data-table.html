@@ -1,0 +1,36 @@
+<div class="tabel">
+  <h2 class="title">قائمة العملاء</h2>
+  <table>
+    <thead>
+      <tr>
+        @for (item of columns; track $index) {
+
+        <th>{{ item }}</th>
+        }
+        <th>الاجراءات</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of data; track $index) {
+
+        <tr>
+          @for (col of columns; track $index) {
+            <td>{{item[col]}}</td>
+          }
+          <td class="action">
+            <div class="action-div">
+              <button class="btn update">
+                <span class="icon"><img src="file-edit.svg" alt="" /></span>
+                <span>تعديل</span>
+              </button>
+              <button class="btn del">
+                <span class="icon"><img src="trash.svg" alt="" /></span>
+                <span>حذف</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
