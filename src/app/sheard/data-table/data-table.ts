@@ -13,6 +13,7 @@ export class DataTable {
   columns: string[]=[]
 
   ngOnInit(){
+    console.log(this.data)
     if(this.modelInstance){
       this.columns=Object.keys(this.modelInstance)
       console.log(this.data[0])

@@ -1,6 +1,6 @@
 <div class="appointment">
     <div class="container">
-        <app-form-data></app-form-data>
-        <app-data-table></app-data-table>
+        <app-form-data [modelInstance]="appointmentWithoutId" [title]="'موعد'" (submitForm)="handelAdd($event)"></app-form-data>
+        <app-data-table [modelInstance]="appointmentInstance" [data]="data"(deleteId)="handelDelete($event)"></app-data-table>
     </div>
 </div>

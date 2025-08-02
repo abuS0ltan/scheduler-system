@@ -1,6 +1,11 @@
-<div class="client-page">
-  <div class="container">
-    <app-form-data  [modelInstance]="clientWithoutId" [title]="'عميل'" (submitForm)="handelAdd($event)"></app-form-data>
-    <app-data-table [modelInstance]="clientInstance" [data]="data" (deleteId)="handelDelete($event)"></app-data-table>
-</div>
-</div>
+
+  <app-loader *ngIf="loading"></app-loader>
+
+
+  <div class="client-page" *ngIf="!loading">
+    <div class="container">
+      <app-form-data  [modelInstance]="clientWithoutId" [title]="'عميل'" (submitForm)="handelAdd($event)"></app-form-data>
+      <app-data-table [modelInstance]="clientInstance" [data]="data" (deleteId)="handelDelete($event)"></app-data-table>
+  </div>
+  </div>
+

@@ -1,5 +1,6 @@
 export class Client {
     id!:number;
     name!:string;
-    phone!:string;
+    phoneNumber?:string;
+    note?:string;
 }
