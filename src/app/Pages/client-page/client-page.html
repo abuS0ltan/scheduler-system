@@ -1,11 +1,26 @@
+<app-loader *ngIf="loading"> </app-loader>
 
-  <app-loader *ngIf="loading"></app-loader>
-
-
-  <div class="client-page" *ngIf="!loading">
-    <div class="container">
-      <app-form-data  [modelInstance]="clientWithoutId" [title]="'عميل'" (submitForm)="handelAdd($event)"></app-form-data>
-      <app-data-table [modelInstance]="clientInstance" [data]="data" (deleteId)="handelDelete($event)"></app-data-table>
+<div class="client-page" *ngIf="loading === false">
+  <div class="container">
+    <app-form-data
+      [modelInstance]="clientWithoutId"
+      [title]="'عميل'"
+      (submitForm)="handelAdd($event)"
+    ></app-form-data>
+    <app-data-table
+      [modelInstance]="clientInstance"
+      [data]="data"
+      (deleteId)="handelDelete($event)"
+      (updateClient)="handelUpdate($event)"
+    ></app-data-table>
   </div>
-  </div>
+</div>
+@if(updateModalOpen){
 
+<app-update-modal
+  [title]="'عميل'"
+  [instance]="clientWithoutId"
+  [(open)]="updateModalOpen"
+  [data]="updateClientInstance"
+></app-update-modal>
+}

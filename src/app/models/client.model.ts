@@ -3,4 +3,5 @@ export class Client {
     name!:string;
     phoneNumber?:string;
     note?:string;
+    [key: string]: any;
 }

@@ -1,0 +1,75 @@
+.update{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.update-div{
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    width: 50%;
+}
+.btn-cancel{
+    width: 2rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: -.5rem;
+    left: -.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}.btn-cancel img{
+    width: 100%;
+    height: 100%;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.btn-div{
+    display: flex;
+    justify-content: end; 
+    gap: .5rem;
+    margin-top: 2rem;
+}
+input{
+    width: 100%;
+}
+.input-div{
+    width: 100%;
+}
+
+.btn{
+    font-size: 1rem;
+    background-color: #657BC9;
+    color: white;
+    border: none;
+    font-weight: 700;
+    padding: .5rem 2rem;
+    width: 15%;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    cursor: pointer;
+}
+.btn .icon {
+    display: flex;
+    align-items: center;
+}
+.btn .icon img{
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+.btn.cancel{
+    background-color: rgb(235, 50, 50);
+}

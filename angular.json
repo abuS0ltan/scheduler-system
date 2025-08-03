@@ -20,6 +20,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            
             "assets": [
               {
                 "glob": "**/*",
@@ -61,7 +62,9 @@
               "buildTarget": "scheduler-system:build:production"
             },
             "development": {
-              "buildTarget": "scheduler-system:build:development"
+              "buildTarget": "scheduler-system:build:development",
+                "proxyConfig": "proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"

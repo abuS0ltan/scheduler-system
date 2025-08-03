@@ -1,0 +1,37 @@
+<div class="update">
+  <div class="update-div">
+    <!--     <button type="button" class="btn-cancel" (click)="onCancel()">
+      <span class="icon"><img src="cross.svg" alt="" /></span>
+    </button> -->
+    <h1 class="title">تحديث {{ title }}</h1>
+    <form class="form-div" #formRef="ngForm" (ngSubmit)="onSubmit()">
+      <div class="inputs-div">
+        @for (item of inputLabel; track $index) {
+
+          <div class="input-div">
+            <label for="">{{item}}</label>
+            <input
+              required
+              type="text"
+              placeholder=" أدخل ال  {{item}} الخاص ب {{ title }}"
+              [(ngModel)]="instance[item]"
+              name="{{item}}"
+              #fieldRef="ngModel"
+              required="true"
+              value="{{data[item]}}"
+            />
+          </div>
+        }
+      </div>
+      <div class="btn-div">
+        <button type="button" class="btn cancel" (click)="onCancel()">
+          <span>الغاء</span>
+        </button>
+        <button type="submit" class="btn" [disabled]="formRef.invalid">
+          <span class="icon"><img src="multiple.svg" alt="" /></span
+          ><span>تحديث</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

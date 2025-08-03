@@ -5,5 +5,5 @@ export class Appointment {
     appointment_date!: Date;   
     location?: string;
     customer_id!: number;
-
+    [key: string]: any;
 }

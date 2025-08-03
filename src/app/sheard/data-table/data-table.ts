@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Client } from '../../models/client.model';
 
 @Component({
   selector: 'app-data-table',
@@ -10,6 +11,7 @@ export class DataTable {
   @Input() data : any[]=[];
   @Input() modelInstance:any;
   @Output() deleteId = new EventEmitter<number>();
+  @Output() updateClient = new EventEmitter<Client>();
   columns: string[]=[]
 
   ngOnInit(){
@@ -21,5 +23,8 @@ export class DataTable {
   }
   delete(id: number) {
     this.deleteId.emit(id);
+  }
+  update(client: Client) {
+    this.updateClient.emit(client);
   }
 }

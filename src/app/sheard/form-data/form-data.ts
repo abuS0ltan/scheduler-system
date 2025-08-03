@@ -15,7 +15,6 @@ export class FormData {
   ngOnInit(){
     if(this.modelInstance){
       this.inputLabel = Object.keys(this.modelInstance);
-      console.log(typeof this.modelInstance.phone);
     }
   }
   onSubmit() {

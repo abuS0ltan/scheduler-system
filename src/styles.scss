@@ -17,3 +17,31 @@
 body{
   background-color: #eff6fd;
 }
+
+.inputs-div{
+    
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.input-div{
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+    width: fit-content;
+}
+input{
+    background-color: #fdfdfd;
+    width: 15rem;
+    padding: .2rem .5rem;
+    border: solid 1px rgb(216, 216, 216);
+    border-radius: .25rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    -ms-border-radius: .25rem;
+    -o-border-radius: .25rem;
+}
+input::placeholder{
+    color: rgb(207, 206, 206);
+}
